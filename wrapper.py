@@ -6,7 +6,7 @@ from allennlp.commands import main
 import os
 
 
-config_file = "./my_text_classifier_bert.jsonnet"
+config_file = "./my_text_classifier_bert_v2.jsonnet"
 
 # Use overrides to train on CPU.
 overrides = json.dumps({"trainer": {"cuda_device": -1}})

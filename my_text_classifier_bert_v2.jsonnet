@@ -2,7 +2,7 @@ local bert_model = "bert-base-uncased";
 
 {
     "dataset_reader" : {
-        "type": "classification-tsv",
+        "type": "SeqClassificationReader",
         "tokenizer": {
             "type": "pretrained_transformer",
             "model_name": bert_model,
@@ -13,7 +13,12 @@ local bert_model = "bert-base-uncased";
                 "model_name": bert_model,
             }
         },
-        "max_tokens": 512
+        "sent_max_len": 10,
+        "max_sent_per_example": 80,
+        "use_sep": 1,
+        "sci_sum": 0,
+        "use_abstract_scores": 0,
+        "sci_sum_fake_scores": 0,
     },
     "train_data_path": "data_seq/CSAbstruct/train.jsonl",
     "validation_data_path": "data_seq/CSAbstruct/dev.jsonl",
